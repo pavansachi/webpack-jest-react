@@ -6,46 +6,100 @@ A started template for react and webpack with jest testing
 * node
 * yarn or npm
 
+Webpack 4 is built as Zero configuration package builder.
+
 ## Usage
 
-### run the build
->> yarn build
+> webpack --mode development
 
-### test
->> yarn test
+We can specify the mode to asssume sensible configuration.
+* --mode development
+* --mode production , minifies code
+
+We can provide additional configurations by adding the webpack config file.
+
+<pre>
+webpack.config.js
+</pre>
+
+### run the build
+> yarn build:dev
+> yarn build:prod
+
+Generates a dist directory containing a bundle of code and assets
 
 ### start webpack server
->> yarn start
+> yarn start
+
+runs the webpack-dev-server
+
+### Testing
+> yarn test
+
+invokes jest to run tests
 
 ### dependencies
 
 
 ### Configuration
 
->> .babelrc or babel.config.js
+#### handle babel transformation
 
-#### jest config to use relative paths
-
-> "jest": {
->    "modulePaths": [
->      "<rootDir>/src"
->    ]
->  }
+<pre>
+ .babelrc
+ 
+ {  
+  "presets": [  
+    "@babel/preset-env",  
+    "@babel/preset-react"  
+  ],  
+  "plugins": [  
+    ["@babel/transform-runtime"]  
+  ]  
+}  
+</pre>
 
 Usage: import Container from "components/Container"; 
 
+#### jest config to use relative paths
+
+this property helps in simplifying imports or requires. We only specify relative to src or root directory
+
+<pre>
+package.json
+
+ "jest": {  
+    "modulePaths": [  
+      "<rootDir>/src"  
+    ]  
+  } 
+ 
+Usage: import Container from "components/Container"; 
+</pre>
+
 #### handling assets in jest
 
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    }
-  }
+create __mocks__ config directory
+assets are not usually not required while running tests. So assets like css or images can be mocked
+using module mapper
+
+<pre>
+package.json  
+
+ "jest": {  
+   "moduleNameMapper": {  
+     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": " <rootDir>/__mocks__/fileMock.js",  
+     "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"  
+   }  
+ }  
+</pre>
 
 ## errors
 
 ### error 1
+
+check if .babelrc configuration is present
+
 ● Test suite failed to run
 
     Jest encountered an unexpected token
@@ -85,6 +139,9 @@ Usage: import Container from "components/Container";
       at Parser.parseCallExpressionArguments (node_modules/@babel/parser/lib/index.js:8720:22)
 
 ### error 2
+
+check if .babelrc is present
+check if __mocks__ directory is configured
 
 ● Test suite failed to run
 
