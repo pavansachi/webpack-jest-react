@@ -26,22 +26,22 @@ A started template for react and webpack with jest testing
 
 #### jest config to use relative paths
 
->> "jest": {
->>    "modulePaths": [
->>      "<rootDir>/src"
->>    ]
->>  }
+> "jest": {  
+>    "modulePaths": [  
+>      "<rootDir>/src"  
+>    ]  
+>  }  
 
 Usage: import Container from "components/Container"; 
 
 #### handling assets in jest
 
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    }
-  }
+> "jest": {  
+>   "moduleNameMapper": {  
+>     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": " <rootDir>/__mocks__/fileMock.js",  
+>     "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"  
+>   }  
+> }  
 
 ## errors
 
