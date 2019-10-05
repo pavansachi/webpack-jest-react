@@ -6,35 +6,39 @@ A started template for react and webpack with jest testing
 * node
 * yarn or npm
 
+Webpack 4 is built as Zero configuration package builder.
+
 ## Usage
+
+> webpack --mode development
+
+We can specify the mode to asssume sensible configuration.
+* --mode development
+* --mode production , minifies code
+
+We can provide additional configurations by adding the webpack config file.
+
+<pre>
+webpack.config.js
+</pre>
 
 ### run the build
 > yarn build
+
+### start webpack server
+> yarn start
 
 ### Testing
 > yarn test
 
 invokes jest to run tests
 
-#### jest config to use relative paths
-
-<pre>
-package.json
-
- "jest": {  
-    "modulePaths": [  
-      "<rootDir>/src"  
-    ]  
-  } 
-</pre>
-
-### start webpack server
-> yarn start
-
 ### dependencies
 
 
 ### Configuration
+
+#### handle babel transformation
 
 <pre>
  .babelrc
@@ -52,7 +56,27 @@ package.json
 
 Usage: import Container from "components/Container"; 
 
+#### jest config to use relative paths
+
+this property helps in simplifying imports or requires. We only specify relative to src or root directory
+
+<pre>
+package.json
+
+ "jest": {  
+    "modulePaths": [  
+      "<rootDir>/src"  
+    ]  
+  } 
+ 
+Usage: import Container from "components/Container"; 
+</pre>
+
 #### handling assets in jest
+
+create __mocks__ config directory
+assets are not usually not required while running tests. So assets like css or images can be mocked
+using module mapper
 
 <pre>
 package.json  
