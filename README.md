@@ -23,7 +23,8 @@ webpack.config.js
 </pre>
 
 ### run the build
-> yarn build
+> yarn build:dev
+> yarn build:prod
 
 ### start webpack server
 > yarn start
