@@ -26,11 +26,11 @@ A started template for react and webpack with jest testing
 
 #### jest config to use relative paths
 
-> "jest": {
->    "modulePaths": [
->      "<rootDir>/src"
->    ]
->  }
+>> "jest": {
+>>    "modulePaths": [
+>>      "<rootDir>/src"
+>>    ]
+>>  }
 
 Usage: import Container from "components/Container"; 
 
