@@ -68,6 +68,9 @@ package.json
 ## errors
 
 ### error 1
+
+check if .babelrc configuration is present
+
 ● Test suite failed to run
 
     Jest encountered an unexpected token
@@ -107,6 +110,9 @@ package.json
       at Parser.parseCallExpressionArguments (node_modules/@babel/parser/lib/index.js:8720:22)
 
 ### error 2
+
+check if .babelrc is present
+check if __mocks__ directory is configured
 
 ● Test suite failed to run
 
