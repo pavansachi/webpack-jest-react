@@ -7,6 +7,9 @@ module.exports = {
     compress: true,
     port: 9000
   },
+  output: {
+    filename: 'bundle.js',
+  },
   resolve: {
     modules: [
       path.join(__dirname, "src"),
