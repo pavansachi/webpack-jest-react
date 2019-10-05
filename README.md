@@ -26,8 +26,12 @@ webpack.config.js
 > yarn build:dev
 > yarn build:prod
 
+Generates a dist directory containing a bundle of code and assets
+
 ### start webpack server
 > yarn start
+
+runs the webpack-dev-server
 
 ### Testing
 > yarn test
