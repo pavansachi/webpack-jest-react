@@ -11,37 +11,54 @@ A started template for react and webpack with jest testing
 ### run the build
 >> yarn build
 
-### test
->> yarn test
+### Testing
+> yarn test
+
+invokes jest to run tests
+
+#### jest config to use relative paths
+
+<pre>
+> "jest": {  
+>    "modulePaths": [  
+>      "<rootDir>/src"  
+>    ]  
+>  } 
+</pre>
 
 ### start webpack server
->> yarn start
+> yarn start
 
 ### dependencies
 
 
 ### Configuration
 
->> .babelrc or babel.config.js
-
-#### jest config to use relative paths
-
-> "jest": {  
->    "modulePaths": [  
->      "<rootDir>/src"  
->    ]  
->  }  
+<pre>
+> .babelrc
+> {  
+>  "presets": [  
+>    "@babel/preset-env",  
+>    "@babel/preset-react"  
+>  ],  
+>  "plugins": [  
+>    ["@babel/transform-runtime"]  
+>  ]  
+>}  
+</pre>
 
 Usage: import Container from "components/Container"; 
 
 #### handling assets in jest
 
+<pre>
 > "jest": {  
 >   "moduleNameMapper": {  
 >     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": " <rootDir>/__mocks__/fileMock.js",  
 >     "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"  
 >   }  
 > }  
+</pre>
 
 ## errors
 
